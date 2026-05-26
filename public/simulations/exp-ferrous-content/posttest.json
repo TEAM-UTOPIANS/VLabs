@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What is the purpose of adding an indicator to the water sample before titration?",
+    "answers": {
+      "a": "To enhance the color change at the endpoint",
+      "b": "To neutralize any acidity in the sample",
+      "c": "To prevent contamination of the sample",
+      "d": "To increase the accuracy of pH measurement"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "question": "Which equipment is essential for conducting the alkalinity determination experiment?",
+    "answers": {
+      "a": "Spectrophotometer",
+      "b": "Burette",
+      "c": "Autoclave",
+      "d": "Pipette"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "question": "Which type of acid solution is commonly used for titrating water samples to determine alkalinity?",
+    "answers": {
+      "a": "Sulfuric acid",
+      "b": "Hydrochloric acid",
+      "c": "Acetic acid",
+      "d": "Nitric acid"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "question": "What should be done if the pH meter used for pH measurement is not properly calibrated?",
+    "answers": {
+      "a": "Proceed with the experiment",
+      "b": "Adjust the pH meter settings during the experiment",
+      "c": "Calibrate the pH meter using standard solutions before proceeding",
+      "d": "Ignore the pH measurement and rely solely on the indicator during titration"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "Why is it important to use a standardized acid solution during titration?",
+    "answers": {
+      "a": "To increase the acidity of the water sample",
+      "b": "To decrease the pH of the water sample",
+      "c": "To accurately determine the amount of alkalinity",
+      "d": "To neutralize the water sample"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "What is the significance of the endpoint in the titration process?",
+    "answers": {
+      "a": "It indicates the initial pH of the water sample",
+      "b": "It marks the start of the titration reaction",
+      "c": "It signals the completion of the reaction",
+      "d": "It measures the color change in the water sample"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "How does alkalinity affect the buffering capacity of water?",
+    "answers": {
+      "a": "Higher alkalinity increases buffering capacity",
+      "b": "Higher alkalinity decreases buffering capacity",
+      "c": "Alkalinity has no effect on buffering capacity",
+      "d": "Buffering capacity is independent of alkalinity"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "question": "What is the role of carbonate and bicarbonate ions in alkalinity determination?",
+    "answers": {
+      "a": "They act as indicators",
+      "b": "They react with the acid solution",
+      "c": "They contribute to the alkalinity",
+      "d": "They decrease the pH of the water sample"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "Which indicator is commonly used to determine total alkalinity?",
+    "answers": {
+      "a": "Phenolphthalein",
+      "b": "Methyl orange",
+      "c": "Bromothymol blue",
+      "d": "Litmus paper"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "question": "What does the term ‘alkalinity’ refer to in the context of water chemistry?",
+    "answers": {
+      "a": "The concentration of acids in the water",
+      "b": "The ability of water to neutralize acids",
+      "c": "The presence of heavy metals in the water",
+      "d": "The pH level of the water"
+    },
+    "correctAnswer": "b"
+  }
+]

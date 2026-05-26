@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>VLabs - Active Simulation Workspace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/custom.css">
+    <script type="module" src="assets/theme.js"></script>
+</head>
+<body class="h-screen w-screen flex flex-col font-body-md relative overflow-hidden bg-background text-on-surface">
+
+    <!-- Background Canvas for Particles -->
+    <canvas id="particle-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-15"></canvas>
+
+    <!-- TopNavBar -->
+    <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 h-16 bg-surface/85 backdrop-blur-xl border-b border-outline-variant/30">
+        <div class="flex items-center gap-8">
+            <a href="index.html" class="font-geist text-lg font-bold tracking-widest text-primary uppercase flex items-center gap-2">
+                <span class="material-symbols-outlined text-[22px]">science</span>
+                vlabs
+            </a>
+        </div>
+        <div class="flex items-center gap-4">
+            <span id="experiment-badge" class="hidden sm:inline-block px-3 py-1 bg-primary/10 text-primary border border-primary/30 font-mono text-[10px] rounded uppercase tracking-widest font-bold">
+                [LOADING_PROTOCOL]
+            </span>
+            <div class="flex gap-2 items-center">
+                <button onclick="toggleTheme()" class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-all p-1.5 rounded" id="theme-toggle-btn" title="Toggle Dark/Light Mode">dark_mode</button>
+                <a href="catalog.html?view=dashboard" class="p-2 text-on-surface-variant hover:text-primary transition-colors" title="System Dashboard"><span class="material-symbols-outlined text-xl block">settings</span></a>
+            </div>
+            <a href="catalog.html?view=elements" class="bg-primary text-white font-geist text-xs font-bold uppercase tracking-wider px-4 py-2 rounded bloom-hover transition-all">Exit Workspace</a>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="flex-1 mt-16 flex flex-col lg:flex-row w-full h-[calc(100vh-64px)] overflow-hidden p-4 gap-4">
+        
+        <!-- Central Viewport: Titration Simulation iframe (Takes full remaining space) -->
+        <section class="flex-grow flex flex-col relative rounded-lg border border-outline-variant overflow-hidden bg-surface-container-low min-h-[400px] lg:min-h-0">
+            <!-- HUD Header -->
+            <div class="absolute top-4 left-4 right-4 z-10 flex justify-between pointer-events-none">
+                <div class="glass-panel px-3 py-1.5 rounded flex items-center gap-3 bg-surface border border-outline-variant shadow-sm">
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                        <span class="font-mono text-[10px] text-primary font-bold uppercase tracking-widest">SIMULATOR_CORE_V2.0</span>
+                    </div>
+                </div>
+                <!-- Controls -->
+                <div class="glass-panel p-1 rounded flex gap-2 pointer-events-auto bg-surface border border-outline-variant shadow-sm">
+                    <button onclick="reloadSimulation()" title="Reload Simulation" class="p-1.5 text-on-surface-variant hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-[16px] block">refresh</span>
+                    </button>
+                    <button onclick="toggleIframeFullscreen()" title="Fullscreen" class="p-1.5 text-on-surface-variant hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-[16px] block">fullscreen</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Simulation iframe Container -->
+            <div class="flex-1 w-full h-full relative" id="iframe-wrapper">
+                <iframe id="simulation-iframe" class="w-full h-full border-none z-0" src="about:blank"></iframe>
+            </div>
+        </section>
+
+        <!-- Right Combined Sidebar: Manual/Documentation (Top) + Observations & Calculations (Bottom) -->
+        <aside class="w-full lg:w-[440px] flex-shrink-0 flex flex-col gap-4 overflow-hidden h-full">
+            
+            <!-- Tabbed Documentation & Quiz (Upper Panel) -->
+            <div class="flex-1 min-h-[250px] glass-panel rounded-lg flex flex-col overflow-hidden bg-surface border border-outline-variant">
+                <!-- Tabs Menu -->
+                <div class="bg-surface-container-low border-b border-outline-variant">
+                    <div class="flex flex-wrap text-center font-mono text-[10px] text-on-surface-variant">
+                        <button onclick="switchTab('aim')" id="tab-aim" class="flex-1 py-2.5 border-b-2 border-transparent hover:text-primary transition-all uppercase tracking-wider font-bold">Aim</button>
+                        <button onclick="switchTab('theory')" id="tab-theory" class="flex-1 py-2.5 border-b-2 border-transparent hover:text-primary transition-all uppercase tracking-wider font-bold">Theory</button>
+                        <button onclick="switchTab('procedure')" id="tab-procedure" class="flex-1 py-2.5 border-b-2 border-transparent hover:text-primary transition-all uppercase tracking-wider font-bold">Proc</button>
+                        <button onclick="switchTab('pretest')" id="tab-pretest" class="flex-1 py-2.5 border-b-2 border-transparent hover:text-primary transition-all uppercase tracking-wider font-bold">PreTest</button>
+                        <button onclick="switchTab('posttest')" id="tab-posttest" class="flex-1 py-2.5 border-b-2 border-transparent hover:text-primary transition-all uppercase tracking-wider font-bold">PostTest</button>
+                        <button onclick="switchTab('references')" id="tab-references" class="flex-1 py-2.5 border-b-2 border-transparent hover:text-primary transition-all uppercase tracking-wider font-bold">Refs</button>
+                    </div>
+                </div>
+                
+                <!-- Tab Contents Container -->
+                <div class="flex-1 overflow-y-auto p-4 md-content" id="doc-container">
+                    <!-- Content will be injected dynamically -->
+                    <div class="flex flex-col items-center justify-center h-full text-on-surface-variant space-y-3">
+                        <span class="material-symbols-outlined text-4xl animate-spin text-primary">sync</span>
+                        <span class="font-mono text-xs uppercase tracking-widest">Fetching laboratory documentation...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Observations & Telemetry & Calculator (Lower Panel) -->
+            <div class="flex-1 min-h-[350px] flex flex-col gap-4 overflow-hidden">
+                <!-- Telemetry Display panel -->
+                <div class="glass-panel rounded-lg p-3 border border-outline-variant flex justify-between bg-surface flex-shrink-0">
+                    <div class="flex flex-col">
+                        <span class="font-mono text-[9px] text-on-surface-variant uppercase tracking-wider">Normality</span>
+                        <span id="telemetry-normality" class="font-mono text-xs text-primary font-bold text-glow">N/100</span>
+                    </div>
+                    <div class="w-px bg-outline-variant"></div>
+                    <div class="flex flex-col items-center">
+                        <span class="font-mono text-[9px] text-on-surface-variant uppercase tracking-wider">Indicator</span>
+                        <span id="telemetry-indicator" class="font-mono text-xs text-on-surface font-semibold">Chromate</span>
+                    </div>
+                    <div class="w-px bg-outline-variant"></div>
+                    <div class="flex flex-col items-end">
+                        <span class="font-mono text-[9px] text-on-surface-variant uppercase tracking-wider">Status</span>
+                        <span class="font-mono text-xs text-emerald-600 flex items-center gap-1 font-semibold">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> READY
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Observation Table -->
+                <div class="flex-1 glass-panel rounded-lg flex flex-col overflow-hidden bg-surface border border-outline-variant">
+                    <div class="bg-surface-container-low p-2 px-3 border-b border-outline-variant flex justify-between items-center">
+                        <span class="font-mono text-[10px] text-primary uppercase font-bold tracking-widest">[OBSERVATION_DATA]</span>
+                        <span class="material-symbols-outlined text-[16px] text-on-surface-variant">table_chart</span>
+                    </div>
+                    <!-- Data scroll list -->
+                    <div class="flex-1 overflow-y-auto">
+                        <table class="w-full text-left border-collapse" id="observation-table">
+                            <thead class="sticky top-0 bg-surface-container-high font-mono text-[9px] text-on-surface-variant border-b border-outline-variant uppercase">
+                                <tr>
+                                    <th class="p-2 font-bold">Trial</th>
+                                    <th class="p-2 font-bold">Initial (mL)</th>
+                                    <th class="p-2 font-bold">Final (mL)</th>
+                                    <th class="p-2 font-bold">Volume (mL)</th>
+                                    <th class="p-2 font-bold text-center">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody class="font-mono text-xs text-on-surface" id="table-body">
+                                <tr id="empty-row" class="border-b border-outline-variant/10">
+                                    <td colspan="5" class="p-4 text-center text-on-surface-variant italic">No trials recorded yet. Use the logger below to log data.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Record Trial form -->
+                    <div class="p-3 bg-surface-container-low border-t border-outline-variant space-y-2">
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="block font-mono text-[8px] text-on-surface-variant uppercase mb-1">Initial Vol (mL)</label>
+                                <input id="input-initial" type="number" step="0.05" class="w-full bg-surface-container border border-outline-variant rounded p-1 text-xs text-on-surface font-mono" value="0.00">
+                            </div>
+                            <div>
+                                <label class="block font-mono text-[8px] text-on-surface-variant uppercase mb-1">Final Vol (mL)</label>
+                                <input id="input-final" type="number" step="0.05" class="w-full bg-surface-container border border-outline-variant rounded p-1 text-xs text-on-surface font-mono" value="0.00">
+                            </div>
+                        </div>
+                        <button onclick="addTrialRow()" class="w-full py-1.5 bg-primary text-white font-mono text-xs font-bold uppercase tracking-wider rounded bloom-hover transition-all flex items-center justify-center gap-1">
+                            <span class="material-symbols-outlined text-sm">add</span> Log Trial Data
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Result Calculations Validation Panel -->
+                <div class="glass-panel rounded-lg p-3 flex flex-col gap-2 bg-surface border border-outline-variant flex-shrink-0">
+                    <div class="flex justify-between items-center border-b border-outline-variant pb-1.5">
+                        <span class="font-mono text-[10px] text-primary uppercase font-bold tracking-widest">[CALCULATOR_TERMINAL]</span>
+                        <span class="material-symbols-outlined text-[16px] text-on-surface-variant">calculate</span>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <label id="label-calc-result" class="font-mono text-[10px] text-on-surface-variant uppercase">Chloride (mg/L)</label>
+                            <input id="input-result" type="number" placeholder="Calculated value" class="w-28 bg-surface-container border border-outline-variant rounded p-1 text-xs text-on-surface font-mono text-right">
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="verifyCalculation()" class="flex-1 py-1.5 border border-primary text-primary font-mono text-xs font-bold uppercase tracking-wider rounded hover:bg-primary/5 transition-all text-center">
+                            Verify
+                        </button>
+                        <button onclick="downloadLabReport()" class="px-2 py-1.5 bg-surface-container-high border border-outline-variant text-on-surface-variant rounded hover:bg-surface-container-highest transition-all" title="Download Observation Report">
+                            <span class="material-symbols-outlined text-sm block">download</span>
+                        </button>
+                    </div>
+                    <div id="calc-feedback" class="font-mono text-[10px] uppercase text-center hidden font-bold">
+                    </div>
+                </div>
+            </div>
+            
+        </aside>
+    </main>
+
+    <!-- Lab Manager Script -->
+    <script type="module" src="js/lab-manager.js"></script>
+    <!-- Script for Chemistry Canvas Background -->
+    <script type="module" src="assets/chem-bg.js"></script>
+</body>
+</html>

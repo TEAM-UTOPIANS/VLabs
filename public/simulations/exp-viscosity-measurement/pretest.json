@@ -1,0 +1,62 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is an Ostwald viscometer",
+      "answers": {
+        "a": "A U-shaped glass tube with markings on two bulbs",
+        "b": "A vertical glass tube with gradations and a dense sphere that can fall in the the tube.",
+        "c": "A vertical glass tube with gradations and a pressure controlled pump",
+        "d": "A pressure contolled pump connected to a horizontal glass tube."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Viscosity coefficient is defined",
+      "answers": {
+        "a": "the force required to lift a unit volume of liquid in a capillary tube.",
+        "b": "the ratio of shear stress to shear strain in a liquid.",
+        "c": "the tangential force per unit area needed to maintain a unit velocity gradient between layers of a liquid.",
+        "d": "the resistance of a liquid to flow due to its density"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The Ostwald viscometer is used to determine the concentration of an unknown sugar solution by comparing the ____________ of the unknown sugar solution with that of a known sugar solution",
+      "answers": {
+        "a": "weight",
+        "b": "volume",
+        "c": "flow time and density",
+        "d": "pH"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "How is the flow pressure calculated for a liquid of known density ?",
+      "answers": {
+        "a": "Using the height difference of liquid columns in the two arms of the U-tube",
+        "b": "Using a pressure sensor connected to the arms of the U-tube",
+        "c": "Using the temperature and volume of the liquid ",
+        "d": "By measuring the time taken for the liquid to flow"
+      },
+
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "For a U-tube viscometer, What is the relation between the viscosity and the density of a liquid?",
+      "answers": {
+        "a": "Viscosity is inversely proportional to the density",
+        "b": "Viscosity and density are independent of each other",
+        "c": "Viscosity is directly proportional to the density ",
+        "d": "Viscosity is proportional to the square root of the density"
+      },
+
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>VLabs - Virtual Chemistry Lab Terminal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/custom.css">
+    <script type="module" src="assets/theme.js"></script>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden relative bg-background text-on-surface">
+
+    <!-- Background Canvas for Particles -->
+    <canvas id="particle-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-20"></canvas>
+
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 h-16 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 transition-all">
+        <a href="index.html" class="font-geist text-lg font-bold tracking-widest text-primary uppercase flex items-center gap-2 hover:opacity-85 transition-opacity">
+            <span class="material-symbols-outlined text-[22px]">science</span>
+            vlabs
+        </a>
+        
+        <div class="flex items-center space-x-4">
+            <a href="catalog.html?view=elements" class="hidden md:block bg-primary text-white px-6 py-2 rounded font-geist text-xs font-bold uppercase tracking-wider bloom-effect transition-all duration-300">
+                Initialize Lab
+            </a>
+            <button onclick="toggleTheme()" class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-all p-1 rounded" id="theme-toggle-btn" title="Toggle Dark/Light Mode">dark_mode</button>
+            <a href="catalog.html?view=dashboard" class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors duration-200" title="System Dashboard">settings</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-24 px-8 min-h-screen flex items-center z-10">
+        <!-- Abstract Glows -->
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-1/4 -right-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[100px]"></div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full max-w-7xl mx-auto relative z-10">
+            <div class="lg:col-span-6 flex flex-col justify-center space-y-8">
+                <div class="inline-flex items-center space-x-2 border border-primary/20 bg-primary/5 px-4 py-1.5 rounded-full w-fit">
+                    <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                    <span class="font-mono text-[10px] text-primary uppercase tracking-widest font-bold">VLabs Terminal v2.0 // Online</span>
+                </div>
+                <h1 class="font-geist text-5xl font-bold tracking-tight text-on-surface leading-tight">
+                    Precision Chemistry in a <span class="text-primary text-glow">Virtual Sandbox</span>.
+                </h1>
+                <p class="font-sans text-lg text-on-surface-variant leading-relaxed max-w-xl">
+                    Experience high-fidelity chemical titration and fluid dynamics simulations. VLabs provides an immersive, structurally accurate digital cockpit for college laboratory research and students.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="catalog.html?view=elements" class="bg-primary text-white px-8 py-4 rounded font-geist text-sm font-bold uppercase tracking-wider text-center bloom-effect transition-all duration-300">
+                        Initialize Lab
+                    </a>
+                    <a href="catalog.html?view=elements" class="border border-primary text-primary px-8 py-4 rounded font-geist text-sm font-bold uppercase tracking-wider text-center hover:bg-primary/5 transition-all duration-300">
+                        View Catalog
+                    </a>
+                </div>
+            </div>
+            <div class="lg:col-span-6 relative h-[450px] lg:h-auto mt-12 lg:mt-0 glass-panel rounded-xl overflow-hidden flex items-center justify-center group">
+                <div class="absolute top-4 left-4 font-mono text-[10px] text-on-surface-variant bg-surface-container-high/80 px-3 py-1.5 rounded border border-outline-variant z-20">
+                    [MOLECULAR_SIM_VIEW]
+                </div>
+                <!-- Molecular image placeholder -->
+                <img alt="Glowing molecular structure" class="w-full h-full object-cover opacity-90 transition-opacity duration-700 z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKSOaHhBFWVY81sgSYbYbjrrpag9gTPaR2dP4J6jw_vFmuMBgaW9GjPBEgBldJEKdNYn3WlF92R4afgymbGTJdvv7TP7oizXIlguv4opHGnzqx9ZpD4RylaPDRBIydyyN9P5XpE4ZM1XWe_h0ae6mnvC-wJfeXfuoCZEPxYMKOu5Rk5qB-7PaegNYzkBvRFhGri_4dbz3PAbzxqV9ZlPiPkkFnZV0E0Ha6CZeU9y4R2TYwn0puO61HD4xRhhWQcqVsvLHPprWh5Q">
+                <div class="absolute bottom-4 right-4 flex space-x-2 z-20">
+                    <div class="bg-surface/95 px-3 py-1.5 rounded border border-primary/30 font-mono text-[11px] text-primary flex items-center space-x-1.5 shadow-sm">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                        <span>Synthesis Engine Active</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Bento Grid Section -->
+    <section class="py-24 px-8 bg-surface-container-low relative z-10 border-t border-outline-variant/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <div class="text-primary font-mono text-xs uppercase tracking-widest mb-2">[PLATFORM_ADVANTAGES]</div>
+                <h2 class="font-geist text-3xl font-bold text-on-surface mb-4">The Digital Advantage</h2>
+                <p class="font-sans text-md text-on-surface-variant max-w-2xl">
+                    Transcend the limitations of physical chemistry spaces. Experience a college sandbox designed with visual precision and computational accuracy.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
+                <!-- Card 1 -->
+                <div class="md:col-span-2 glass-panel p-6 rounded-lg flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute top-4 left-4 font-mono text-[10px] text-on-surface-variant bg-surface-container-high px-2 py-1 rounded border border-outline-variant z-10">
+                        [SAFETY_PROTOCOLS]
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="mt-8 z-10">
+                        <span class="material-symbols-outlined text-primary mb-4 text-4xl">shield_locked</span>
+                        <h3 class="font-geist text-xl font-bold text-on-surface mb-2">Absolute Safety</h3>
+                        <p class="font-sans text-sm text-on-surface-variant">Conduct highly volatile titrations and mix complex reagents without any hazardous chemical exposure or physical waste disposal.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-panel p-6 rounded-lg flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute top-4 left-4 font-mono text-[10px] text-on-surface-variant bg-surface-container-high px-2 py-1 rounded border border-outline-variant z-10">
+                        [GLOBAL_SYNC]
+                    </div>
+                    <div class="mt-8">
+                        <span class="material-symbols-outlined text-secondary mb-4 text-4xl">public</span>
+                        <h3 class="font-geist text-xl font-bold text-on-surface mb-2">Omnipresent Access</h3>
+                        <p class="font-sans text-sm text-on-surface-variant">Manage and run laboratory modules directly from any authorized browser, synced with active protocol logs.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-panel p-6 rounded-lg flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute top-4 left-4 font-mono text-[10px] text-on-surface-variant bg-surface-container-high px-2 py-1 rounded border border-outline-variant z-10">
+                        [CURVE_Telemetry]
+                    </div>
+                    <div class="mt-8">
+                        <span class="material-symbols-outlined text-secondary mb-4 text-4xl">analytics</span>
+                        <h3 class="font-geist text-xl font-bold text-on-surface mb-2">Real-time Graphs</h3>
+                        <p class="font-sans text-sm text-on-surface-variant">Observe dynamic pH curves, titration logs, and viscosity graphs update in real-time as you run experiments.</p>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="md:col-span-2 glass-panel p-6 rounded-lg flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute top-4 left-4 font-mono text-[10px] text-on-surface-variant bg-surface-container-high px-2 py-1 rounded border border-outline-variant z-10">
+                        [COMPUTATIONAL_ENGINE]
+                    </div>
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&amp;fit=crop&amp;q=80&amp;w=1000')] bg-cover bg-center opacity-5 group-hover:scale-105 transition-transform duration-1000"></div>
+                    <div class="mt-8 z-10">
+                        <span class="material-symbols-outlined text-primary mb-4 text-4xl">memory</span>
+                        <h3 class="font-geist text-xl font-bold text-on-surface mb-2">Simulation Engine</h3>
+                        <p class="font-sans text-sm text-on-surface-variant">Powered by a lightweight, client-side HTML/CSS/JS architecture, providing responsive animations, titration nozzle flow controls, and particle indicators.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full py-8 px-8 bg-surface-container-low border-t border-outline-variant/30 relative z-10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-on-surface-variant">
+            <div class="font-mono text-xs">© 2026 VLABS_CHEM_INSTITUTE. ALL_RIGHTS_RESERVED.</div>
+            <div class="flex flex-wrap gap-6 items-center justify-center">
+                <a class="font-mono text-[10px] hover:text-primary transition-opacity duration-300" href="catalog.html?view=dashboard">Safety Protocols</a>
+                <a class="font-mono text-[10px] hover:text-primary transition-opacity duration-300" href="catalog.html?view=dashboard">Terminal Setup</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for Chemistry Canvas Background -->
+    <script type="module" src="assets/chem-bg.js"></script>
+</body>
+</html>

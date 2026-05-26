@@ -1,0 +1,966 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.main{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.header{
+    border: 1px solid black;
+    background-color: aqua;
+    position: absolute;
+    height: 7%;
+    width: 100%; 
+}
+
+.header h1{
+    font-size: 100%;
+    text-align: center;
+    font-size:2.5vw;
+    left:2.3%;
+    align-items: center;
+    position: absolute;
+}
+
+.footer{
+    display: flex;
+    top: 7%;
+    height: 93%;
+    width: 100%;
+    position: absolute;
+    align-items: center;
+}
+
+.simulate{
+    background-size: cover;
+    position: absolute;
+    height: 96%;
+    width: 77%;
+    border: 1px solid black;
+    margin-left: 1%;
+    margin-top: 0%;
+}       
+
+#lab{
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+    position: absolute;
+ }
+    
+
+#work{
+    background-size: cover;
+    position: relative;
+    height: 96%;
+    width: 77%;
+    border: 1px solid black;
+    margin-left: 1%;
+    margin-top: 0%;
+}
+
+
+#message{
+    margin-left: 1%;
+    margin-top: 0%;
+    border: 1px solid black;
+    background-color: antiquewhite;
+    width: 20%;
+    height: 96%;
+    position: relative;
+    text-align: center;
+}
+
+#ins{
+    font-size: 3.5vw;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#text{
+    font-size: 2.4vw;
+    font-weight: 100;
+    color: blue;
+}
+
+#hindi{
+    position:absolute;
+    border-radius: 20%;
+    padding: 1%;
+    font-size: 1.5vh;
+    left: 45%;
+    top: 50%;
+    border: none;
+    background-color: rgb(226, 239, 33);
+    font-weight: 1000;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+#hindi:active{
+    scale: 0.9;
+}
+
+#eng{
+    position:absolute;
+    border-radius: 20%;
+    padding: 1%;
+    font-size: 1.5vh;
+    left: 55%;
+    top: 50%;
+    border: none;
+    background-color: rgb(226, 239, 33);
+    font-weight: 1000;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#eng:active{
+    scale: 0.9;
+}
+
+#lselector{
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-size: 2vh;
+    color: white;
+    left: 45.2%;
+    top: 40%;
+}
+
+#langselector{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    transition: all;
+    transition-duration: 1s;
+}
+
+/*Hover Elements Starts here*/
+#hovt{
+    position: absolute;
+    font-size: 1.3vw;
+    color: black;
+    background-color: greenyellow;
+    border: 1px solid black;
+    transition: all;
+    transition-duration: 0.5s;
+    visibility: hidden;
+}
+#hviscometer{
+    position: absolute;
+    visibility:"visible";
+    height: 40%;
+    width: 8%;
+    top: 21%;
+    left: 14.5%;
+    /* background-color: black;
+    opacity: 50%; */
+}
+#hmachine
+{
+    position: absolute;
+    visibility: visible;
+    height: 11%;
+    width: 10%;
+    top: 49.9%;
+    left: 25.7% ;
+    /* background-color: black;
+    opacity: 50%; */
+     
+}
+#hfunnel{
+    position: absolute;
+    visibility: visible;
+    height: 7%;
+    width: 4%;
+    top: 60.5% ;
+    left: 47%;
+    transition: all;
+    transition-duration: 1s;
+    /* background-color: black;
+    opacity: 50%; */
+    
+}
+#hspatula{
+    position: absolute;
+    visibility: visible;
+    height: 3%;
+    width: 11.5%;
+    top:62% ;
+    left: 35.5%;
+    /* background-color: black;
+    opacity: 50%; */
+}
+#hpdish{
+    position: absolute;
+    visibility: visible;
+    height: 3%;
+    width: 6%;
+    position: absolute;
+    top: 58%;
+    left: 36.5%;
+    /* background-color: black;
+    opacity: 50%; */
+    
+}
+#hpow{
+    position: absolute;
+    visibility: visible;
+    height: 4%;
+    width: 4%;
+    top: 55%;
+    left: 37.5%;
+    /* background-color: rgb(234, 18, 18);
+    opacity: 50%; */
+    
+}
+#heflask1
+{
+    position: absolute;
+    visibility: visible;  
+    height: 17%;
+    width: 3%;
+    top: 43%;
+    left: 49.5%;
+    /* background-color: black;
+    opacity: 50%; */
+}
+#hwbeaker{
+    position: absolute;
+    visibility: visible;
+    height: 16.5%;
+    width: 5%;
+    top: 44%;
+    left: 54%;
+    /* background-color: black;
+    opacity: 50%; */
+}
+#hbottle{
+    position: absolute;
+    visibility:visible;
+    height: 11.5%;
+    width: 2.7%;
+    top: 49%;
+    left:60.3%;
+    /* background-color: black;
+    opacity: 50%; */
+}
+#hpip{
+    position: absolute;
+    visibility: visible;
+    height: 2%;
+    width:11%;
+    top: 63%;
+    left: 52%;
+    /* background-color: black;
+    opacity: 50%;  */
+}
+/*Hover Elements Ends here*/
+
+
+#viscometer{
+    visibility:"visible";
+    height: 40%;
+    position: absolute;
+    top: 20.7%;
+    left: 18%;
+}
+#viscometerfill{
+    visibility:hidden;
+    height: 60%;
+    position: absolute;
+    top: 23%;
+    left: 13%;
+}
+#viscometersuc1{
+    visibility:hidden;
+    height: 60%;
+    position: absolute;
+    top: 23%;
+    left: 13%;
+}
+#viscometersuc2{
+    visibility:hidden;
+    height: 60%;
+    position: absolute;
+    top: 23%;
+    left: 13%;
+}
+#viscometersuc3{
+    visibility:hidden;
+    height: 60%;
+    position: absolute;
+    top: 23%;
+    left: 13%;
+}
+#viscometerfall1{
+    visibility:hidden;
+    height: 60%;
+    position: absolute;
+    top: 23%;
+    left: 13%;
+}
+#viscometerfall2{
+    visibility:hidden;
+    height: 60%;
+    position: absolute;
+    top: 23%;
+    left: 13%;
+}
+#viscometerfall3{
+    visibility:hidden;
+    height: 60%;
+    position: absolute;
+    top: 23%;
+    left: 13%;
+}
+#viscometerfall4{
+    visibility:hidden;
+    height: 60%;
+    position: absolute;
+    top: 23%;
+    left: 13%;
+}
+#viscometerfall5{
+    visibility:hidden;
+    height: 60%;
+    position: absolute;
+    top: 23%;
+    left: 13%;
+}
+#viscometerfall6{
+    visibility:hidden;
+    height: 60%;
+    position: absolute;
+    top: 23%;
+    left: 13%;
+}
+#viscometerfall7{
+    visibility:hidden;
+    height: 60%;
+    position: absolute;
+    top: 23%;
+    left: 13%;
+}
+
+#waterdrop1{
+    visibility: hidden;
+    height:3%;
+    position: absolute;
+    top: 34%;
+    left: 18.2%;
+    transition: all;
+    transition-duration: 10s;
+}
+#waterdrop2{
+    visibility: hidden;
+    height:3%;
+    position: absolute;
+    top: 35.5%;
+    left: 18.2%;
+    transition: all;
+    transition-duration: 10s;
+}
+#waterdrop3{
+    visibility: hidden;
+    height:3%;
+    position: absolute;
+    top: 41.2%;
+    left: 18.2%;
+    transition: all;
+    transition-duration: 10s;
+}
+#waterdropAlt{
+    visibility: hidden;
+    height:3%;
+    position: absolute;
+    top: 43%;
+    left: 18.2%;
+}
+
+
+#machine
+{
+    height: 11%;
+    width: 13%;
+    position: absolute;
+    top: 49.9%;
+    left: 32% ;
+    transition: all;
+    transition-duration: 1s;
+     
+}
+
+#eflask1
+{
+    height: 17%;
+    position: absolute;
+    top: 43%;
+    left: 62.5%;
+    visibility: visible;
+    transition: all;
+    transition-duration: 1s;   
+}
+#eflask2
+{
+    height: 23%;
+    position: absolute;
+    top: 43%;
+    left: 62.5%;
+    visibility: hidden;  
+}
+#eflask3
+{
+    height: 23%;
+    position: absolute;
+    top: 43%;
+    left: 62.5%;
+    visibility: hidden;  
+}
+#eflask4
+{
+    height: 23%;
+    position: absolute;
+    top: 43%;
+    left: 62.5%;
+    visibility: hidden;  
+}
+#sol
+{
+    height: 23%;
+    position: absolute;
+    top: 43%;
+    left: 62.5%;
+    visibility: hidden;
+    transition: all;
+    transition-duration: 1s;   
+}
+#sol50
+{
+    height: 23%;
+    position: absolute;
+    top: 43%;
+    left: 62.5%;
+    visibility:hidden;  
+}
+#sol40
+{
+    height: 23%;
+    position: absolute;
+    top: 43%;
+    left: 62.5%;
+    visibility:hidden;  
+}
+#sol20
+{
+    height: 23%;
+    position: absolute;
+    top: 56%;
+    left: 32%;
+    visibility:hidden;  
+}
+#sol10
+{
+    height: 23%;
+    position: absolute;
+    top: 56%;
+    left: 22%;
+    visibility:hidden;  
+}
+#sol5
+{
+    height: 23%;
+    position: absolute;
+    top: 56%;
+    left: 14.5%;
+    visibility:hidden;  
+}
+#solunk
+{
+    height: 23%;
+    position: absolute;
+    top: 43%;
+    left: 62.5%;
+    visibility:hidden;  
+}
+#pip{
+    position: absolute;
+    visibility: visible;
+    rotate: 90deg;
+    width:1.1%;
+    top: 52%;
+    left: 73%; 
+    transition: all;
+    transition-duration: 1s;
+}
+#pip60{
+    position: absolute;
+    visibility: hidden;
+    rotate: 90deg;
+    width:1.1%;
+    top: 52%;
+    left: 73%; 
+    transition: all;
+    transition-duration: 1s;
+}
+#pip40{
+    position: absolute;
+    visibility: hidden;
+    rotate: 90deg;
+    width:1.5%;
+    top: 56%;
+    left: 42%; 
+    transition: all;
+    transition-duration: 1s;
+}
+#pip30{
+    position: absolute;
+    visibility: hidden;
+    rotate: 90deg;
+    width:1.5%;
+    top: 52%;
+    left: 70%; 
+    transition: all;
+    transition-duration: 1s;
+}
+#pip20{
+    position: absolute;
+    visibility: hidden;
+    rotate: 90deg;
+    width:1.5%;
+    top: 52%;
+    left: 70%; 
+    transition: all;
+    transition-duration: 1s;
+}
+#pip10{
+    position: absolute;
+    visibility: hidden;
+    rotate: 90deg;
+    width:1.5%;
+    top: 52%;
+    left: 70%; 
+    transition: all;
+    transition-duration: 1s;
+}
+#pip45{
+    position: absolute;
+    visibility: hidden;
+    rotate: 90deg;
+    width:1.5%;
+    top: 52%;
+    left: 70%; 
+    transition: all;
+    transition-duration: 1s;
+}
+#pip5{
+    position: absolute;
+    visibility: hidden;
+    rotate: 90deg;
+    width:1.5%;
+    top: 52%;
+    left: 70%; 
+    transition: all;
+    transition-duration: 1s;
+}
+
+#pdish{
+    
+    height: 4%;
+    width: 7.5%;
+    position: absolute;
+    top: 57.7%;
+    left: 46.3%;
+    transition: all;
+    transition-duration: 1s;
+    
+}
+
+#edish{
+    height: 4%;
+    width: 7.5%;
+    position: absolute;
+    top: 57.7%;
+    left: 46.3%;
+    visibility: hidden;
+    transition: all;
+    transition-duration: 1s;
+}
+
+#pow{
+    height: 6%;
+    width: 7%;
+    position: absolute;
+    top: 54.7%;
+    left: 46.5%;
+    transition: all;
+    transition-duration: 1s;
+    
+}
+#pow1{
+    height: 3%;
+    width: 3%;
+    position: absolute;
+    visibility: hidden;
+    top: 68.8%;
+    left: 17%;
+    transition: all;
+    transition-duration: 1s;
+    
+}
+#pow1c{
+    height: 2%;
+    width: 4.5%;
+    position: absolute;
+    visibility: hidden;
+    top: 77%;
+    left: 51%;
+    transition: all;
+    transition-duration: 1s;
+    
+}
+#pow2{
+    height: 3%;
+    width: 3%;
+    position: absolute;
+    visibility: hidden;
+    top: 68.8%;
+    left: 19%;
+    transition: all;
+    transition-duration: 1s;
+    
+}
+
+#spatula{
+    height: 9%;
+    width: 13%;
+    position: absolute;
+    visibility: visible;
+    top:60% ;
+    left: 46%;
+    transition: all;
+    transition-duration: 1s;
+}
+#fspatula{
+    height: 9%;
+    width: 13%;
+    position: absolute;
+    visibility: hidden;
+    top:60% ;
+    left: 46%;
+    transition: all;
+    transition-duration: 1s;
+}
+
+#funnel{
+    height: 10%;
+    position: absolute;
+    rotate: 63deg;
+    top: 60.5% ;
+    left: 60%;
+    transition: all;
+    transition-duration: 1s;
+    
+}
+#funnel2{
+    visibility:hidden;
+    height: 10%;
+    position: absolute;
+    top: 60.5% ;
+    left: 60%;    
+}
+
+
+#wbeaker{
+    height: 17%;
+    position: absolute;
+    top: 44%;
+    left: 68%;
+    transition: all;
+    transition-duration: 2s;
+}
+
+#bottle{
+    height: 12%;
+    position: absolute;
+    visibility:visible;
+    top: 49%;
+    left:77%;
+    transition: all;
+    transition-duration: 1s;
+}
+#bottle2{
+    height: 12%;
+    position: absolute;
+    visibility:hidden;
+    top: 49%;
+    left:77%;
+    transition: all;
+    transition-duration: 1s;
+}
+#fbottle1{
+    height: 12%;
+    position: absolute;
+    visibility:hidden;
+    top: 49%;
+    left:77%;
+    transition: all;
+    transition-duration: 1s;
+}
+#fbottle2{
+    height: 12%;
+    position: absolute;
+    visibility:hidden;
+    top: 49%;
+    left:77%;
+    transition: all;
+    transition-duration: 1s;
+}
+#obottle{
+    height: 12%;
+    position: absolute;
+    visibility:hidden;
+    top: 49%;
+    left:77%;
+}
+#fobottle{
+    height: 12%;
+    position: absolute;
+    visibility:hidden;
+    top: 49%;
+    left:77%;
+}
+
+#start{
+    position:absolute;
+    border-radius: 30%;
+    padding: 1%;
+    font-size: 1vw;
+    left: 90%;
+    top: 90%;
+    border: none;
+    background-color: cyan;
+    box-shadow: 2px 2px 0px 1px;
+    font-weight: 1000;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#next{
+    position:absolute;
+    border-radius: 30%;
+    padding: 1%;
+    font-size: 1vw;
+    left: 89%;
+    top: 87%;
+    visibility: hidden;
+    border: none;
+    background-color: rgb(188, 237, 66);
+    box-shadow: 2px 2px 0px 1px;
+    font-weight: 1000;
+    font-family: 'Times New Roman', Times, serif;
+}
+#forward{
+    position:absolute;
+    border-radius: 30%;
+    padding: 1%;
+    font-size: 1vw;
+    left: 89%;
+    top: 30%;
+    visibility: hidden;
+    border: none;
+    background-color: chartreuse;
+    box-shadow: 2px 2px 0px 1px;
+    font-weight: 1000;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#zlab{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    visibility: hidden; 
+
+}
+
+#number{
+    position: absolute;
+    visibility: hidden;
+    color: red;
+    font-size: 1.2vw;
+    top: 55.3%;
+    left: 36%;  
+}
+
+#on{
+position: absolute;
+background-color: none;
+opacity: 0%;
+width: 1.5%;
+height: 2%;
+border-radius: 17%;
+top: 54.4%;
+left: 42.8%;
+visibility: hidden; 
+transition: all;
+transition-duration: 1s;  
+}
+
+#tare{
+position: absolute;
+background-color: none;
+opacity: 0%;
+width: 1.8%;
+height: 2%;
+border-radius: 17%;
+top: 57%;
+left: 42.7%;
+visibility: hidden; 
+transition: all;
+transition-duration: 1s;  
+}
+
+#suction{
+    position: absolute;
+    background-color: none;
+    opacity:0%;
+    width: 4.7%;
+    height: 3%;
+    border-radius: 17%;
+    top: 77.7%;
+    left: 15%;
+    visibility: hidden; 
+    transition: all;
+    transition-duration: 1s;
+}
+
+.wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    visibility: hidden;
+}
+.wrapper p{
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    z-index: 9999;
+    font-size: 48px;
+    margin-bottom: 120px;
+    left: 35%;
+}
+#distilledflask{
+    position: absolute;
+    top: 60%;
+    left: 70%;
+    height: 23%;
+    visibility: hidden;
+}
+.wrapper p::before{
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #151538;
+    z-index: -1;
+    border-radius: 50%;
+	left: -40%;
+    top: -118%;
+    animation-name: shine;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+@keyframes shine{
+    0%,100%{
+        box-shadow: 0px 0px 32px -12px rgba(246, 180, 0, .5);
+    }
+    50%{
+        box-shadow: 0px 0px 32px 3px rgba(246, 180, 0, .5);
+    }
+}
+
+/* Start button */
+#btn-start{
+    background-color: #222242;
+    padding: 10px 38px;
+    border: 1px solid #A9A9A9;
+    border-radius: 28px;
+    color: #fff;
+    transition: all .2s ease;
+    outline: 0;
+}
+#btn-start:not(:last-child){
+    margin-right: 20px;
+}
+#btn-start:hover,
+#btn-start:focus
+{
+    border-color: #F6B400;
+    color: #F6B400;
+    box-shadow: 0px 4px 27px -12px #F6B400;
+}
+
+
+/* Stop button */
+#btn-stop{
+    background-color: #222242;
+    padding: 10px 38px;
+    border: 1px solid #A9A9A9;
+    border-radius: 28px;
+    color: #fff;
+    transition: all .2s ease;
+    outline: 0;
+}
+#btn-stop:not(:last-child){
+    margin-right: 20px;
+}
+#btn-stop:hover,
+#btn-stop:focus
+{
+    border-color: #F6B400;
+    color: #F6B400;
+    box-shadow: 0px 4px 27px -12px #F6B400;
+}
+
+
+
+/* Reset button */
+#btn-reset{
+    background-color: #222242;
+    padding: 10px 38px;
+    border: 1px solid #A9A9A9;
+    border-radius: 28px;
+    color: #fff;
+    transition: all .2s ease;
+    outline: 0;
+}
+#btn-reset:not(:last-child){
+    margin-right: 20px;
+}
+#btn-reset:hover,
+#btn-reset:focus
+{
+    border-color: #F6B400;
+    color: #F6B400;
+    box-shadow: 0px 4px 27px -12px #F6B400;
+}

@@ -1,0 +1,73 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. If the flow time of a sugar solution  (denser than water) is longer than the flow time of water in the viscometer,  what can be inferred about the viscosity of the sugar solution?",
+      "answers": {
+        "a": "The sugar solution has a higher viscosity than water",
+        "b": "The sugar solution has a lower viscosity than water",
+        "c": "The viscosity of the sugar solution is approximately equal to that of water since sugar solution is denser than water but flows slower than water", 
+        "d": "The viscosity of the sugar solution cannot be compared to that of water since sugar solution is more dense than water"
+        
+       
+      },
+
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "2. What does the graphical relationship between η (viscosity) and concentration of sucrose ?",
+      "answers": {
+        "a": "Linear increasing",
+        "b": "Linear decreasing",
+        "c": "Square root ",
+        "d": "Inverse square root"
+      },
+
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "3. What is the biggest advantage of using the Ostwald viscometer for this experiment?",
+      "answers": {
+        "a":"It provides an easy way to calculate the flow pressure",
+        "b":"It can be used for different liquids",
+        "c":"It works for a range of temperatures",
+        "d":"It is made of glass which does not react with most liquids."
+        
+       
+       
+      },
+      
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "4. Why is it important to measure the density of the sugar solutions accurately in this experiment ?",
+      "answers": {
+        "a": "Density is used as an additional way to check the solutions.",
+        "b": "Density is used in the calculations of the coefficient of viscosity ",
+        "c": "To ensure that the solutions have the correct concentrations",
+        "d": "Density is used to calculate the volumes of the solutions."
+       
+      },
+      
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "5. What is the effect of using a viscometer with a capillary tube having a larger diameter",
+      "answers": {
+        "a":"The flow rate will reduce", 
+        "b":"The flow can become less smooth (laminar)" ,
+        "c":"The flow rate will increase",
+        "d":"The viscosity of the solution will decrease"
+        
+       
+      },
+
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+[            
+    {
+      "question": "What is the primary purpose of using a chelating agent in complexometric titration?",
+      "answers": {
+        "a": "Indicating the endpoint", 
+        "b": "Removing temporary hardness", 
+        "c": "Forming stable complexes with metal ions", 
+        "d": "Adjusting the pH of the water sample"
+      },
+      "correctAnswer": "c"
+    },
+
+    {
+      "question": "Which ion contributes to permanent hardness in water?",
+      "answers": {
+      "a": "Ca2+", 
+      "b": "Mg2+",
+      "c": "HCO3-",
+      "d": "SO4^2-"
+      },
+      "correctAnswer": "d"
+    },
+
+    {
+      "question": "Why is it necessary to add a buffer solution in the complexometric titration of water hardness?",
+      "answers": {
+        "a": "Enhancing the color change", 
+        "b": "Stabilizing the pH",
+        "c": "Accelerating the reaction", 
+        "d": "Increasing the titrant concentration"
+      },
+      "correctAnswer": "b"
+    },
+
+    {
+      "question": "What indicator is commonly used in complexometric titrations for endpoint detection?",
+      "answers": {
+        "a": "Litmus paper", 
+        "b": "Phenolphthalein", 
+        "c": "Eriochrome Black T (EBT)", 
+        "d": "Bromothymol blue"
+      },
+      "correctAnswer": "c"
+    },
+
+    {
+      "question": "Which type of hardness can be removed by boiling water?",
+      "answers": { 
+      "a": "Temporary hardness", 
+      "b": "Permanent hardness", 
+      "c": "Both temporary and permanent hardness", 
+      "d": "Neither temporary nor permanent hardness"
+      },
+      "correctAnswer": "a"
+    },
+    {
+      "question": "What is the unit of measurement for water hardness?",
+      "answers": {
+        "a": "ppm (parts per million)", 
+        "b": "pH units", 
+        "c": "mg/L (milligrams per liter)", 
+        "d": "Molarity (M)"
+      },
+      "correctAnswer": "a"
+    },
+
+    {
+      "question": "What information is crucial for continuous monitoring during the experiment?",
+      "answers": {
+        "a": "Inlet and outlet temperature", 
+        "b": "Flow rates and abnormalities", 
+        "c": "Precipitate color changes", 
+        "d": "Resin regeneration frequency"
+      },
+      "correctAnswer": "b"
+    },
+
+    {
+      "question": "When is resin regeneration necessary in the experiment?",
+      "answers": { 
+        "a": "Before water sample collection", 
+        "b": "After complexometric titration", 
+        "c": "When the resin reaches its capacity", 
+        "d": "Only during calibration"
+      },
+      "correctAnswer": "c"
+    },
+
+    {
+      "question": "What is the purpose of passing the water sample through the ion exchange column in the experiment?",
+      "answers": { 
+        "a": "To precipitate permanent hardness", 
+        "b": "To collect a representative water sample", 
+        "c": "To calibrate the ion exchange resin", 
+        "d": "To remove temporary hardness"
+      },
+      "correctAnswer": "d"
+    },
+
+    {
+      "question": "What role does the metal ion play in the formation of a complex during complexometric titration?",
+      "answers": {
+        "a": "Acts as a catalyst", 
+        "b": "Forms a colored compound", 
+        "c": "Binds with the chelating agent", 
+        "d": "Neutralizes the solution"
+      },
+      "correctAnswer": "c"
+    }
+]

@@ -1,0 +1,102 @@
+[
+    {
+        "question": "What is the primary cause of temporary hardness in water?",
+        "answers": {
+            "a": "Calcium chloride",
+            "b": "Calcium carbonate",
+            "c": "Magnesium sulfate",
+            "d": "Sodium bicarbonate"
+        },
+        "correctAnswer": "d"
+    },
+    {
+        "question": "Which ion is responsible for permanent hardness in water?",
+        "answers": {
+            "a": "Ca2+",
+            "b": "Mg2+",
+            "c": "HCO3-",
+            "d": "SO4^2-"
+        },
+        "correctAnswer": "d"
+    },
+    {
+        "question": "In complexometric titration, what is the function of the chelating agent?",
+        "answers": {
+            "a": "Indicating the endpoint",
+            "b": "Forming a complex with metal ions",
+            "c": "Providing color change",
+            "d": "Neutralizing the solution"
+        },
+        "correctAnswer": "b"
+    },
+    {
+        "question": "What is the primary purpose of adding a buffer solution in the complexometric titration of water hardness?",
+        "answers": {
+            "a": "Enhancing the color change",
+            "b": "Stabilizing the pH",
+            "c": "Accelerating the reaction",
+            "d": "Increasing the titrant concentration"
+        },
+        "correctAnswer": "b"
+    },
+    {
+        "question": "Which type of hardness can be removed by boiling water?",
+        "answers": {
+            "a": "Temporary hardness",
+            "b": "Permanent hardness",
+            "c": "Both temporary and permanent hardness",
+            "d": "Neither temporary nor permanent hardness"
+        },
+        "correctAnswer": "a"
+    },
+    {
+        "question": "What is the endpoint of a complexometric titration determined by?",
+        "answers": {
+            "a": "Visual color change",
+            "b": "pH meter reading",
+            "c": "Conductivity measurement",
+            "d": "Gas evolution"
+        },
+        "correctAnswer": "a"
+    },
+    {
+        "question": "What is the unit of measurement for water hardness?",
+        "answers": {
+            "a": "ppm (parts per million)",
+            "b": "pH units",
+            "c": "mg/L (milligrams per liter)",
+            "d": "Molarity (M)"
+        },
+        "correctAnswer": "a"
+    },
+    {
+        "question": "Which type of hardness can be removed by boiling water?",
+        "answers": {
+            "a": "Temporary hardness",
+            "b": "Permanent hardness",
+            "c": "Both temporary and permanent hardness",
+            "d": "Neither temporary nor permanent hardness"
+        },
+        "correctAnswer": "a"
+    },
+    {
+        "question": "What is the chemical formula for ethylenediaminetetraacetic acid (EDTA), a commonly used chelating agent in complexometric titrations?",
+        "answers": {
+            "a": "C6H5OH",
+            "b": "C2H5OH",
+            "c": "C10H14N2O8",
+            "d": "CH3COOH"
+        },
+        "correctAnswer": "c"
+    },
+    {
+        "question": "What role does the metal ion play in the formation of a complex during complexometric titration?",
+        "answers": {
+            "a": "Acts as a catalyst",
+            "b": "Forms a colored compound",
+            "c": "Binds with the chelating agent",
+            "d": "Neutralizes the solution"
+        },
+        "correctAnswer": "c"
+    }
+]

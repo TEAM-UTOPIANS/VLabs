@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titration Results</title>
+    <link rel="stylesheet" href="css/Other.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* background-color: #f4f4f4; */
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .header h2 {
+            color: #666;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .header h3 {
+            color: #888;
+            font-size: 16px;
+            margin: 20px 0 10px 0;
+        }
+
+        table {
+            width: 90%;
+            max-width: 900px;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 16px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        td {
+            color: #555;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .mybutton {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .mybutton:hover {
+            background-color: #45a049;
+        }
+
+        .info-text {
+            color: #666;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .error-message {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .success-message {
+            color: green;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Your Titration is Finished</h1>
+        <h2>To determine the Total, Permanent and Temporary hardness of water sample.</h2>
+        <h3>Results</h3>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th>Formula used in this Experiment :</th>
+                <td>M1V1 = M2V2 (M1 = Molarity of Water Sample and V1 = Volume of Water Sample
+                    M2 = Molarity of EDTA and V2 = Volume of EDTA)
+                </td>
+            </tr>
+                    
+        </table>
+    </div>
+
+    <div id="error-container"></div>
+    <div id="results-container"></div>
+
+    <div class="button-container">
+        <a href="index.html"><button class="mybutton">Replay <span style="font-weight:bolder; font-size:18px">&#8634;</span></button></a>
+    </div>
+
+    <script src="js/calculation.js"></script>
+    <script>
+        // Initialize the calculator and display results
+        function displayResults() {
+            const calculator = new HardnessCalculator();
+
+            // Load results from localStorage
+            if (!calculator.loadResults()) {
+                showError('No experimental data found. Please complete the experiments first.');
+                return;
+            }
+
+            // Calculate hardness values
+            calculator.calculate();
+            const results = calculator.getFormattedResults();
+
+            if (!results) {
+                showError('Failed to calculate hardness values.');
+                return;
+            }
+
+            // Display the results in a table
+            const html = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sample In</th>
+                            <th>Volume Of Solution Taken</th>
+                            <th>Volume Result Used</th>
+                            <th>Normality of water sample (N)</th>
+                            <th>Hardness in ppm</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Total Hardness</td>
+                            <td>${results.totalHardness.sampleVolume}</td>
+                            <td>${results.totalHardness.volumeUsed}</td>
+                            <td>${results.totalHardness.normality}</td>
+                            <td>${results.totalHardness.ppm}</td>
+                        </tr>
+                        <tr>
+                            <td>Permanent Hardness</td>
+                            <td>${results.permanentHardness.sampleVolume}</td>
+                            <td>${results.permanentHardness.volumeUsed}</td>
+                            <td>${results.permanentHardness.normality}</td>
+                            <td>${results.permanentHardness.ppm}</td>
+                        </tr>
+                        <tr>
+                            <td>Temporary Hardness</td>
+                            <td colspan="3" style="text-align: center;">Total Hardness - Permanent Hardness</td>
+                            <td>${results.temporaryHardness.ppm}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            `;
+            
+
+            const container = document.getElementById('results-container');
+            container.innerHTML = html;
+
+            // Log the results to console for debugging
+            console.log('Calculated Results:', calculator.getResults());
+            console.log('Formatted Results:', results);
+        }
+
+        // Display error message
+        function showError(message) {
+            const errorContainer = document.getElementById('error-container');
+            errorContainer.innerHTML = `<div class="error-message">${message}</div>`;
+            console.error(message);
+        }
+
+        // Display the results when the page loads
+        window.addEventListener('load', displayResults);
+
+        // Optional: Add a "Clear Data" function for debugging
+        function clearAllData() {
+            HardnessCalculator.clearStorage();
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

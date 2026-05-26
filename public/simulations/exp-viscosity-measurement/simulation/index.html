@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body> 
+    <main class="main">
+        <div class="header">
+                <h1> Determination of percentage composition of sugar solution from viscosity measurment. </h1>
+        </div>
+        <div class="footer">
+            <div class="simulate" id="simulator">
+                <img id="lab" src="images/lab.png" alt="">
+                <img id="zlab" src="images/zoomlab.png" alt="">
+            </div>
+        
+            <div id="work">
+                <img id="funnel" src="images/funnel.png" alt="">
+                <img id="funnel2" src="images/funnel.png" alt="">
+                <img id="machine" onclick="machine()" src="images/weighing-scale.png" alt="">
+                <img id="pdish" onclick="pdish()" src="images/edish.png" alt="">
+                <img id="edish" onclick="edish()" src="images/edish.png" alt="">
+                <img id="spatula" onclick="spatula()" src="images/spatula.png" alt="">
+                <img id="fspatula" onclick="fspatula()" src="images/fspatula.png" alt="">
+                <img id="pow" src="images/powder.png" alt="">
+                <img id="pow1" src="images/powder.png" alt="">
+                <img id="pow1c" src="images/powder.png" alt="">
+                <img id="pow2" src="images/powder.png" alt="">
+                <img id="pip60" onclick="pipette60()" src="images/pip-60.png" alt="">
+                <img id="pip40" onclick="pipette40()" src="images/pip-40.png" alt="">
+                <img id="pip30" onclick="pipette30()" src="images/pip-30.png" alt="">
+                <img id="pip20" onclick="pipette20()" src="images/pip-20.png" alt="">
+                <img id="pip10" onclick="pipette10()" src="images/pip-10.png" alt="">
+                <img id="pip45" onclick="pipette45()" src="images/pip-40.png" alt="">
+                <img id="pip5" onclick="pipette5()" src="images/pip-10.png" alt="">
+                <img id="pip" onclick="pipette()" src="images/pippette-new.png" alt="">
+                <img id="eflask1" src="images/eflask.png" alt="">
+                <img id="eflask2" src="images/eflask.png" alt="">
+                <img id="eflask3" src="images/eflask.png" alt="">
+                <img id="eflask4" src="images/eflask.png" alt="">
+                <img id="sol" src="images/solution.png" alt="">
+                <img id="sol5" src="images/sol-5.png" alt="">
+                <img id="sol10" src="images/sol-10.png" alt="">
+                <img id="sol20" src="images/sol-20.png" alt="">
+                <img id="sol40" src="images/sol-40.png" alt="">
+                <img id="sol50" src="images/sol-50.png" alt="">
+                <img id="solunk" src="images/sol-unknown.png" alt="">
+                <img id="waterdrop1" src="images/waterdrop.png" alt="">
+                <img id="waterdrop2" src="images/waterdrop.png" alt="">
+                <img id="waterdrop3" src="images/waterdrop.png" alt="">
+                <img id="waterdropAlt" src="images/waterdrop.png" alt="">
+                <img id="viscometer" src="images/viscometer.png" alt="">
+                <img id="viscometerfill" src="images/viscofill.png" alt="">
+                <img id="viscometersuc1" src="images/viscosuc-1.png" alt="">
+                <img id="viscometersuc2" src="images/viscosuc-2.png" alt="">
+                <img id="viscometersuc3" src="images/viscosuc-3.png" alt="">
+                <img id="viscometerfall1" src="images/viscofall-1.png" alt="">
+                <img id="viscometerfall2" src="images/viscofall-2.png" alt="">
+                <img id="viscometerfall3" src="images/viscofall-3.png" alt="">
+                <img id="viscometerfall4" src="images/viscofall-4.png" alt="">
+                <img id="viscometerfall5" src="images/viscofall-5.png" alt="">
+                <img id="viscometerfall6" src="images/viscofall-6.png" alt="">
+                <img id="viscometerfall7" src="images/viscofall-7.png" alt="">
+                <img id="wbeaker" onclick="wbeaker()" src="images/wbeaker.png" alt="">
+                <img id="obottle" src="images/obotempty.png" alt="">
+                <img id="fobottle" src="images/obotfill.png" alt="">
+                <img id="bottle" onclick="bottle()" src="images/bottle.png" alt="">
+                <img id="fbottle1" onclick="fbottle1()" src="images/bottle-water.png" alt="">
+                <img id="bottle2" src="images/bottle.png" alt=""> 
+                <img id="fbottle2" onclick="fbottle2()" src="images/bottle-sugar.png" alt="">
+                <button id="start" onclick="start1()" >Start</button>
+                <button id="next" onclick="next()" >Next</button>
+                <button id="forward" onclick="forward()" >Forward</button>
+                <img src="images/distilled_water_flask.png" id="distilledflask" title="conical with distilled water">
+                <p id="number"> 0.0 gm</p>
+                <button id="on" onclick="on()" ></button>
+                <button id="tare" onclick="tare()" ></button>
+                <button id="suction" onclick="suction()" ></button>
+            </div>
+
+            <h1 id="hovt"></h1>
+            <div id="hviscometer"></div>
+            <div id="hmachine"></div>
+            <div id="hfunnel"></div>
+            <div id="hspatula"></div>
+            <div id="hpdish"></div>
+            <div id="hpow"></div>
+            <div id="heflask1"></div>
+            <div id="hwbeaker"></div>
+            <div id="hbottle"></div>
+            <div id="hpip"></div>
+
+            <div id="message">
+            <h1 id="ins">Instructions</h1>
+            <h1 id="text">lets start the experiment</h1>
+            </div>    
+        </div>
+
+        <div class="wrapper">
+            <p>
+            <span class="seconds">00</span>:<span class="tens">00</span>
+            </p> <br>
+            <button id="btn-start">Start</button>
+            <button id="btn-stop">Stop</button>
+            <button id="btn-reset">Reset</button>
+        </div>
+ 
+
+    </main>
+    <script src="js/script.js"></script>
+    <script src="js/starting.js"></script>
+</body>
+</html>
