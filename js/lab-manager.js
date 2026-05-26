@@ -650,3 +650,14 @@ function syncIframeTheme() {
     }
 }
 
+// Global functions exports
+window.switchTab = switchTab;
+window.submitQuiz = submitQuiz;
+window.reloadSimulation = reloadSimulation;
+window.toggleIframeFullscreen = toggleIframeFullscreen;
+window.addTrialRow = addTrialRow;
+window.deleteTrialRow = deleteTrialRow;
+window.verifyCalculation = verifyCalculation;
+window.downloadLabReport = downloadLabReport;
+
+
