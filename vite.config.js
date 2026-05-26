@@ -3,7 +3,7 @@ import { resolve } from 'path';
 
 export default defineConfig(({ mode }) => {
   return {
-    base: mode === 'production' ? '/Virtual_Labs/' : '/',
+    base: (mode === 'production' && process.env.GITHUB_ACTIONS === 'true') ? '/Virtual_Labs/' : '/',
     build: {
       rollupOptions: {
         input: {
